@@ -1,0 +1,69 @@
+/*
+ * Remove the unit of a length
+ * Based on danimalweb realizations:
+ *  https://github.com/twbs/bootstrap/issues/23982#issuecomment-330183311
+ *  https://github.com/creativedotdesign/tofino/issues/57#issuecomment-150242990
+*/
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+/*
+ * Calculate rem from px
+*/
+
+$rfs-rem-value: 16;
+
+@function rem($pxval, $base: $rfs-rem-value) {
+  @return strip-unit($pxval) / $base * 1rem;
+}
+
+/*
+ * Get settings for elements from settings maps
+ *
+ *  Neede information are stored in next format:
+ *    $config-<element name>: (
+ *      <name of state of rule>: <variable or value>,
+ *      ...
+ *    );
+ *
+ *  Exmple of using:
+ *    background: config(background, $config-button);
+*/
+
+@function config($key, $config) {
+  @if map-has-key($config, $key) {
+    @return map-get($config, $key);
+  }
+
+  @warn "Branding config: Unknown key `#{$key}`.";
+
+  @return null;
+}
+
+@function merge-configs($theme, $default) {
+  @return map-merge($default, $theme);
+}
+
+@function get-icon($icon, $color: $default-icon-color, $icons: $icons) {
+  @if "color" != type-of($color) {
+    @warn "Get icon: The requested color - `#{$color}` - was not recognized as a Sass color value.";
+
+    @return null;
+  }
+
+  @if map-has-key($icons, $icon) {
+    $icon: map-get($icons, $icon);
+    $placeholder: "*COLOR*";
+    $data-svg-prefix: "data:image/svg+xml,";
+
+    $data-uri: str-replace(url($data-svg-prefix + $icon), $placeholder, $color);
+
+    @return escape-svg($data-uri);
+  }
+
+  @warn "Get icon: The requested icon - #{$icon} - is not defined in the $icons map.";
+
+  @return null;
+}

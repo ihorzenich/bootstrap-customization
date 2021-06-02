@@ -1,0 +1,20 @@
+$config-btn-primary: (
+  "background": $color-custom-1,
+  "color": $color-custom-3,
+);
+
+$config-btn-secondary: (
+  "background": $color-custom-2,
+  "color": $color-custom-3,
+);
+
+
+$config-btn-primary: merge-configs(
+  if(variable-exists("config-btn-primary"), $config-btn-primary, ()),
+  $config-default-btn-primary
+);
+
+$config-btn-secondary: merge-configs(
+  if(variable-exists("config-btn-secondary"), $config-btn-secondary, ()),
+  $config-default-btn-secondary
+);

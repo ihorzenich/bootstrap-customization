@@ -1,0 +1,16 @@
+.btn {
+
+  // Primary buttons
+
+  &-primary {
+    background: config("background", $config-btn-primary);
+    color: config("color", $config-btn-primary);
+  }
+
+  // Secondary buttons
+
+  &-secondary {
+    background: config("background", $config-btn-secondary);
+    color: config("color", $config-btn-secondary);
+  }
+}

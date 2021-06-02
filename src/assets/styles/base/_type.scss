@@ -1,0 +1,29 @@
+h1,
+.h1 {
+  color: config("color", $config-type-h1);
+}
+
+h2,
+.h2 {
+  color: config("color", $config-type-h2);
+}
+
+h3,
+.h3 {
+  color: config("color", $config-type-h3);
+}
+
+h4,
+.h4 {
+  color: config("color", $config-type-h4);
+}
+
+h5,
+.h5 {
+  color: config("color", $config-type-h5);
+}
+
+h6,
+.h6 {
+  color: config("color", $config-type-h6);
+}

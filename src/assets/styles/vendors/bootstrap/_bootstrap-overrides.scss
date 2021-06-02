@@ -1,0 +1,59 @@
+// Bootstrap Variables
+// Derived Bootstrap variables can depend on values from here
+// Customize Bootstrap variables that get imported before the original Bootstrap variables.
+
+// Grid
+// Using predefined Bootstrap variables with default values + adding XXL size
+$layout-max-width: 1600px;
+$grid-gutter-width: 30px;
+
+// -- Media breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: $layout-max-width + $grid-gutter-width,
+);
+
+$container-max-widths: (
+  sm: rem(540px),
+  md: rem(720px),
+  lg: rem(960px),
+  xl: rem(1200px),
+  xxl: rem(1600px),
+);
+
+// -- Options
+// $enable-shadows: true;
+// $border-radius: 0.125rem;
+
+/*
+  --COMPONENTS block
+*/
+
+// -- Header
+// -- Logo
+// $navbar-brand-padding-x: 0;
+// $navbar-brand-padding-y: 0;
+
+/*
+  --TYPOGRAPHY block
+*/
+$enable-responsive-font-sizes: true;
+$font-family-sans-serif: "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-size-base: 1rem;
+$body-color: config("body", $config-main-colors);
+
+// Headers
+$headings-font-weight: 700;
+$h1-font-size: config("font-size", $config-type-h1);
+$h2-font-size: config("font-size", $config-type-h2);
+$h3-font-size: config("font-size", $config-type-h3);
+$h4-font-size: config("font-size", $config-type-h4);
+$h5-font-size: config("font-size", $config-type-h5);
+$h6-font-size: config("font-size", $config-type-h6);
+
+// Vertical rhythm
+$form-group-margin-bottom: config("component-inside-vertical-gap", $config-vertical-rhythm);

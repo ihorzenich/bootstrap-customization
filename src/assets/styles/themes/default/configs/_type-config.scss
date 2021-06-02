@@ -1,0 +1,44 @@
+$config-default-type-h1: (
+  "color": $colorTextPrimary,
+);
+
+$config-default-type-h2: (
+  "color": $colorTextPrimary,
+);
+
+$config-default-type-h3: (
+  "color": $colorTextPrimary,
+);
+
+$config-default-type-h4: (
+  "color": $colorTextPrimary,
+);
+
+$config-default-type-h5: (
+  "color": $colorTextPrimary,
+);
+
+$config-default-type-h6: (
+  "color": $colorTextPrimary,
+);
+
+$config-default-main-colors: (
+  "body": $colorTextPrimary,
+);
+
+$config-type-h1: merge-configs(if(variable-exists("config-type-h1"), $config-type-h1, ()), $config-default-type-h1);
+$config-type-h2: merge-configs(if(variable-exists("config-type-h2"), $config-type-h2, ()), $config-default-type-h2);
+$config-type-h3: merge-configs(if(variable-exists("config-type-h3"), $config-type-h3, ()), $config-default-type-h3);
+$config-type-h4: merge-configs(if(variable-exists("config-type-h4"), $config-type-h4, ()), $config-default-type-h4);
+$config-type-h5: merge-configs(if(variable-exists("config-type-h5"), $config-type-h5, ()), $config-default-type-h5);
+$config-type-h6: merge-configs(if(variable-exists("config-type-h6"), $config-type-h6, ()), $config-default-type-h6);
+
+$config-page-heading: merge-configs(
+  if(variable-exists("config-page-heading"), $config-page-heading, ()),
+  $config-default-page-heading
+);
+
+$config-main-colors: merge-configs(
+  if(variable-exists("config-main-colors"), $config-main-colors, ()),
+  $config-default-main-colors
+);

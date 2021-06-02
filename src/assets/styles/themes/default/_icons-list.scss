@@ -1,0 +1,8 @@
+$default-icon-color: #000;
+
+$default-icons: (
+  "checkmark":
+    "<svg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 27 20'><path fill='*COLOR*' d='M3.61 5.81l10.608 10.606-2.829 2.829L.782 8.638z'/><path fill='*COLOR*' d='M24.162.808L8.606 16.364l2.828 2.828L26.991 3.636z'/></svg>",
+);
+
+$icons: merge-configs(if(variable-exists("icons"), $icons, ()), $default-icons);
